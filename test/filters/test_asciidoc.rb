@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class Nanoc::Filters::AsciiDocTest < Nanoc::TestCase
+class Nanoc::Filters::AsciiDocTest < Nanoc::StubSharedSiteConfigTestCase
 
   def test_filter
     if_have 'systemu' do

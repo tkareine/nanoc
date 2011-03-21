@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class Nanoc::Filters::RDocTest < Nanoc::TestCase
+class Nanoc::Filters::RDocTest < Nanoc::StubSharedSiteConfigTestCase
 
   def test_filter
     if_have 'rdoc' do

@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class Nanoc::Filters::SassTest < Nanoc::TestCase
+class Nanoc::Filters::SassTest < Nanoc::StubSharedSiteConfigTestCase
 
   def test_filter
     if_have 'sass' do

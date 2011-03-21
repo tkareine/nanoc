@@ -48,6 +48,12 @@ module Nanoc
       end
     end
 
+    def stub_shared_site_config(config)
+      site = mock
+      site.stubs(:config).returns(config)
+      Nanoc::Site.stubs(:shared).returns(site)
+    end
+
     def with_site(params={})
       # Build site name
       site_name = params[:name]
@@ -179,6 +185,16 @@ EOS
 
     include TestHelpers
     include Assertions
+
+  end
+
+  class StubSharedSiteConfigTestCase < TestCase
+
+    def setup
+      super
+
+      stub_shared_site_config :tmp_dir => 'tmp'
+    end
 
   end
 

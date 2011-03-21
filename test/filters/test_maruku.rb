@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class Nanoc::Filters::MarukuTest < Nanoc::TestCase
+class Nanoc::Filters::MarukuTest < Nanoc::StubSharedSiteConfigTestCase
 
   def test_filter
     if_have 'maruku' do

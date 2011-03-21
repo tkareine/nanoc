@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class Nanoc::Filters::ErubisTest < Nanoc::TestCase
+class Nanoc::Filters::ErubisTest < Nanoc::StubSharedSiteConfigTestCase
 
   def test_filter_with_instance_variable
     if_have 'erubis' do

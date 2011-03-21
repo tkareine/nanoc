@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class Nanoc::Filters::HamlTest < Nanoc::TestCase
+class Nanoc::Filters::HamlTest < Nanoc::StubSharedSiteConfigTestCase
 
   def test_filter
     if_have 'haml' do

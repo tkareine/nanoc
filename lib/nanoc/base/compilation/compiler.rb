@@ -87,7 +87,7 @@ module Nanoc
       store
     ensure
       # Cleanup
-      FileUtils.rm_rf(Nanoc::Filter::TMP_BINARY_ITEMS_DIR)
+      FileUtils.rm_rf(File.join(site.config[:tmp_dir], Nanoc::Filter::TMP_BINARY_ITEMS_DIR))
     end
 
     # @group Private instance methods

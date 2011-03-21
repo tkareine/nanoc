@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class Nanoc::Filters::RDiscountTest < Nanoc::TestCase
+class Nanoc::Filters::RDiscountTest < Nanoc::StubSharedSiteConfigTestCase
 
   def test_filter
     if_have 'rdiscount' do

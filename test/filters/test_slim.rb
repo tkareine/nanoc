@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class Nanoc::Filters::SlimTest < Nanoc::TestCase
+class Nanoc::Filters::SlimTest < Nanoc::StubSharedSiteConfigTestCase
 
   def test_filter
     if_have 'slim' do

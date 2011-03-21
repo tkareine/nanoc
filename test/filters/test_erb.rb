@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class Nanoc::Filters::ERBTest < Nanoc::TestCase
+class Nanoc::Filters::ERBTest < Nanoc::StubSharedSiteConfigTestCase
 
   def test_filter_with_instance_variable
     # Create filter

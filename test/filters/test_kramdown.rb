@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class Nanoc::Filters::KramdownTest < Nanoc::TestCase
+class Nanoc::Filters::KramdownTest < Nanoc::StubSharedSiteConfigTestCase
 
   def test_filter
     if_have 'kramdown' do

@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class Nanoc::ItemRepTest < Nanoc::TestCase
+class Nanoc::ItemRepTest < Nanoc::StubSharedSiteConfigTestCase
 
   def test_created_modified_compiled
     # TODO implement

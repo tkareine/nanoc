@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class Nanoc::Filters::CodeRayTest < Nanoc::TestCase
+class Nanoc::Filters::CodeRayTest < Nanoc::StubSharedSiteConfigTestCase
 
   def test_filter_without_language
     if_have 'coderay' do

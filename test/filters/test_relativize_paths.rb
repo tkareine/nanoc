@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class Nanoc::Filters::RelativizePathsTest < Nanoc::TestCase
+class Nanoc::Filters::RelativizePathsTest < Nanoc::StubSharedSiteConfigTestCase
 
   def test_filter_html_with_double_quotes
     # Create filter with mock item

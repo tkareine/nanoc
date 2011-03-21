@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class Nanoc::Filters::RedClothTest < Nanoc::TestCase
+class Nanoc::Filters::RedClothTest < Nanoc::StubSharedSiteConfigTestCase
 
   def test_filter
     if_have 'redcloth' do

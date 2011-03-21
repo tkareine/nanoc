@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class Nanoc::Filters::LessTest < Nanoc::TestCase
+class Nanoc::Filters::LessTest < Nanoc::StubSharedSiteConfigTestCase
 
   def test_filter
     if_have 'less' do
