@@ -182,7 +182,7 @@ module Nanoc
     #
     # @return [Nanoc::DependencyTracker] The dependency tracker for this site
     def dependency_tracker
-      dt = Nanoc::DependencyTracker.new(@site.items + @site.layouts)
+      dt = Nanoc::DependencyTracker.new(@site, @site.items + @site.layouts)
       dt.compiler = self
       dt
     end
@@ -418,19 +418,19 @@ module Nanoc
 
     # @return [CompiledContentCache] The compiled content cache
     def compiled_content_cache
-      Nanoc::CompiledContentCache.new
+      Nanoc::CompiledContentCache.new(@site)
     end
     memoize :compiled_content_cache
 
     # @return [ChecksumStore] The checksum store
     def checksum_store
-      Nanoc::ChecksumStore.new(:site => @site)
+      Nanoc::ChecksumStore.new(@site)
     end
     memoize :checksum_store
 
     # @return [RuleMemoryStore] The rule memory store
     def rule_memory_store
-      Nanoc::RuleMemoryStore.new(:site => @site)
+      Nanoc::RuleMemoryStore.new(@site)
     end
     memoize :rule_memory_store
 

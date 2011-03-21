@@ -159,7 +159,7 @@ class Nanoc::CompilerTest < MiniTest::Unit::TestCase
 
     # Create site
     site = mock
-    site.stubs(:config).returns({})
+    site.stubs(:config).returns({ :tmp_dir => 'tmp' })
     site.stubs(:items).returns([])
     site.stubs(:layouts).returns([ layout ])
 

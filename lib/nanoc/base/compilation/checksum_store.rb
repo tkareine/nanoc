@@ -7,13 +7,11 @@ module Nanoc
   #
   # @api private
   class ChecksumStore < ::Nanoc::Store
+    CHECKSUM_FILE = 'checksums'
 
-    # @option params [Nanoc::Site] site The site where this checksum store
-    #   belongs to
-    def initialize(params={})
-      super('tmp/checksums', 1)
-
-      @site = params[:site] if params.has_key?(:site)
+    # @param [Nanoc::Site] site The site where this checksum store belongs to
+    def initialize(site)
+      super(File.join(site.config[:tmp_dir], CHECKSUM_FILE), 1)
 
       @checksums = {}
     end
