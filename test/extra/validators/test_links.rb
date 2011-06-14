@@ -1,8 +1,6 @@
 # encoding: utf-8
 
-class Nanoc::Extra::Validators::LinksTest < MiniTest::Unit::TestCase
-
-  include Nanoc::TestHelpers
+class Nanoc::Extra::Validators::LinksTest < Nanoc::TestCase
 
   def test_is_external_href?
     # Create validator

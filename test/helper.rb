@@ -135,6 +135,10 @@ EOS
       end
     end
 
+  end
+
+  module Assertions
+
     # Adapted from http://github.com/lsegal/yard-examples/tree/master/doctest
     def assert_examples_correct(object)
       P(object).tags(:example).each do |example|
@@ -168,6 +172,13 @@ EOS
       assert remaining.empty?,
         'Expected %s to contain all the elements of %s' % [actual.inspect, expected.inspect]
     end
+
+  end
+
+  class TestCase < MiniTest::Unit::TestCase
+
+    include TestHelpers
+    include Assertions
 
   end
 

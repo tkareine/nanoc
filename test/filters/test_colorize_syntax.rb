@@ -1,8 +1,6 @@
 # encoding: utf-8
 
-class Nanoc::Filters::ColorizeSyntaxTest < MiniTest::Unit::TestCase
-
-  include Nanoc::TestHelpers
+class Nanoc::Filters::ColorizeSyntaxTest < Nanoc::TestCase
 
   def test_coderay_simple
     if_have 'coderay', 'nokogiri' do

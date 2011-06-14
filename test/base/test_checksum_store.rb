@@ -1,8 +1,6 @@
 # encoding: utf-8
 
-class Nanoc::ChecksumStoreTest < MiniTest::Unit::TestCase
-
-  include Nanoc::TestHelpers
+class Nanoc::ChecksumStoreTest < Nanoc::TestCase
 
   def setup
     super
