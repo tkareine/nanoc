@@ -119,6 +119,23 @@ EOF
     end
   end
 
+  def test_allows_configurable_tmp_dir
+    with_site do
+      configured_tmp_dir = 'config_tmp_dir'
+
+      # Update configuration
+      File.open('config.yaml', 'w') do |io|
+        io.write "tmp_dir: #{configured_tmp_dir}"
+      end
+
+      Nanoc::Site.new('.').compile
+
+      assert !File.exist?('tmp')
+      assert File.directory?(configured_tmp_dir)
+      refute_empty Dir[File.join(configured_tmp_dir, '*')]
+    end
+  end
+
 end
 
 describe 'Nanoc::Site#initialize' do
