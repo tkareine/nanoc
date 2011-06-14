@@ -52,10 +52,7 @@ EOF
   end
 
   def test_load_data_sources_first
-    # Create site
-    Nanoc::CLI.run %w( create_site bar)
-
-    FileUtils.cd('bar') do
+    with_site do
       # Create data source code
       File.open('lib/some_data_source.rb', 'w') do |io|
         io.write "class FooDataSource < Nanoc::DataSource\n"
