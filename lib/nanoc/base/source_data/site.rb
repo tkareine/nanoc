@@ -17,6 +17,9 @@ module Nanoc
   # that contains a configuration file, site data, a rakefile, a rules file,
   # etc. The way site data is stored depends on the data source.
   class Site
+    class << self
+      attr_reader :shared
+    end
 
     # The default configuration for a data source. A data source's
     # configuration overrides these options.
@@ -47,6 +50,7 @@ module Nanoc
     #   to the site directory; if a hash, contains the site configuration.
     def initialize(dir_or_config_hash)
       build_config(dir_or_config_hash)
+      self.class.instance_variable_set :@shared, self
     end
 
     # Compiles the site.

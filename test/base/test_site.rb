@@ -104,6 +104,21 @@ EOF
     end
   end
 
+  def test_shares_latest_site
+    with_site do
+      value_from_latest_config_key = 'value'
+
+      # Update configuration
+      File.open('config.yaml', 'w') do |io|
+        io.write "marker_key: #{value_from_latest_config_key}"
+      end
+
+      Nanoc::Site.new('.').compile
+
+      assert_equal(value_from_latest_config_key, Nanoc::Site.shared.config[:marker_key])
+    end
+  end
+
 end
 
 describe 'Nanoc::Site#initialize' do
