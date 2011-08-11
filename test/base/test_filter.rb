@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class Nanoc::FilterTest < Nanoc::TestCase
+class Nanoc::FilterTest < Nanoc::StubSharedSiteConfigTestCase
 
   def test_initialize
     # Create filter
@@ -76,6 +76,20 @@ class Nanoc::FilterTest < Nanoc::TestCase
 
     # Check filename
     assert_equal('?', filter.filename)
+  end
+
+  def test_output_filename
+    # Mock items
+    item = mock
+    item.expects(:identifier).returns('/foo/bar/baz/')
+    item_rep = mock
+    item_rep.expects(:name).returns(:quux)
+
+    # Create filter
+    filter = Nanoc::Filter.new({ :item => item, :item_rep => item_rep })
+
+    # Check output filename
+    assert_match(%r{tmp/binary_items/item--foo-bar-baz---rep-quux}, filter.output_filename)
   end
 
 end
